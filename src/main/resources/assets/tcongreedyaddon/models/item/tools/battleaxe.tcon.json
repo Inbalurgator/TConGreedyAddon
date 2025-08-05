@@ -1,0 +1,9 @@
+{
+  "textures": {
+    "layer0": "tcongreedyaddon:item/battleaxe/handle",
+    "layer1": "tcongreedyaddon:item/battleaxe/backhead",
+    "layer2": "tcongreedyaddon:item/battleaxe/fronthead",
+    "layer3": "tcongreedyaddon:item/battleaxe/binding",
+    "broken1": "tcongreedyaddon:item/battleaxe/broken_head"
+  }
+}

@@ -1,0 +1,33 @@
+{
+	"textures": {
+		"layer0": "tcongreedyaddon:item/greatblade/handle",
+		"layer1": "tcongreedyaddon:item/greatblade/top_blade",
+		"layer2": "tcongreedyaddon:item/greatblade/bottom_blade",
+		"layer3": "tcongreedyaddon:item/greatblade/great_blade_core",
+	  	"layer4": "tcongreedyaddon:item/greatblade/accessory",
+	  	"broken1": "tcongreedyaddon:item/greatblade/top_blade_broken"
+
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [ 0, -90, 55 ],
+			"translation": [ 0, 10.0, 0.5 ],
+			"scale": [ 1.5, 1.5, 1.5 ]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [ 0, 90, -55 ],
+			"translation": [ 0, 10.0, 0.5 ],
+			"scale": [ 1.5, 1.5, 1.5 ]
+		},
+		"firstperson_righthand": {
+			"rotation": [ 0, -95, 30 ],
+			"translation": [ 2.13, 6.0, 0.13 ],
+			"scale": [ 1.2, 1.2, 1.2 ]
+		},
+		"firstperson_lefthand": {
+			"rotation": [ 0, 95, -30 ],
+			"translation": [ 2.13, 6.0, 0.13 ],
+			"scale": [ 1.2, 1.2, 1.2 ]
+		}
+	}
+}

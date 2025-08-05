@@ -125,6 +125,11 @@ dependencies {
             transitive = false // We only care about the 1 annotation class
         }
     }
+
+    implementation "curse.maven:hei-557549:6187146"
+    implementation "curse.maven:Mantle-74924:2713386"
+    implementation "curse.maven:TConstruct-74072:2902483"
+
     if (propertyBool('use_asset_mover')) {
         implementation "com.cleanroommc:assetmover:${propertyString('asset_mover_version')}"
     }

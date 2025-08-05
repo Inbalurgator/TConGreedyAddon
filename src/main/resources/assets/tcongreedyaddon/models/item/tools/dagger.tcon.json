@@ -1,0 +1,8 @@
+{
+	"textures": {
+		"layer0": "tcongreedyaddon:item/dagger/dagger_handle",
+		"layer2": "tcongreedyaddon:item/dagger/dagger_accessory",
+		"layer1": "tcongreedyaddon:item/dagger/dagger_blade",
+		"broken1": "tcongreedyaddon:item/dagger/dagger_blade_broken"
+  }
+}
