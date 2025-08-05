@@ -25,20 +25,15 @@ public class OldWeapons extends IModule {
     public static Property battleaxeEnabled;
     public static Property daggerEnabled;
     public static Property isReplacingCrossbow;
-
     public static Property crossbowOldCrosshair;
     public static Property autoCrossbowReload;
     public static Property autoCrossbowDualWield;
-
-    public static WeaponBattleAxe battleaxe;
-
-    public static WeaponDagger dagger;
-
     public static Property greatbladeEnabled;
-
     public static Property greatbladeCoreCraftable;
     public static Property greatbladeCoreFromEndShip;
 
+    public static WeaponBattleAxe battleaxe;
+    public static WeaponDagger dagger;
     public static ToolPart greatbladeCore;
     public static WeaponGreatblade greatblade;
 
