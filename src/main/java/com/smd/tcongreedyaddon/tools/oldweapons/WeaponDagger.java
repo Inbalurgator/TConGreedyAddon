@@ -11,8 +11,6 @@ import java.util.List;
 
 public class WeaponDagger extends SwordCore {
 
-    public static final float DURABILITY_MODIFIER = 0.75f;
-
     public WeaponDagger() {
         super(PartMaterialType.handle(TinkerTools.toolRod),
               PartMaterialType.head(TinkerTools.knifeBlade),
