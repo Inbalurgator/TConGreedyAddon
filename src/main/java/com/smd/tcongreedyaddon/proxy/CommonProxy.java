@@ -33,7 +33,4 @@ public class CommonProxy {
         TinkerBook.INSTANCE.addTransformer(new BookTransformerAppendModifiers());
     }
 
-    public void registerModifierModel(IModifier mod, ResourceLocation rl) {
-    }
-
 }

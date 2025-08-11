@@ -13,6 +13,11 @@ public abstract class IModule {
     public IModule(boolean isEnabled) {
         this.isEnabled = isEnabled;
     }
+
+    public abstract boolean isModAvailable(
+
+    );
+
     public abstract void buildConfig(Configuration cfg);
 
     public void preInit(FMLPreInitializationEvent event) {
@@ -20,6 +25,7 @@ public abstract class IModule {
 
     public void init(FMLInitializationEvent event) {
     }
+
     public boolean isEnabled() {
         return isEnabled;
     }

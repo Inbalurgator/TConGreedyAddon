@@ -11,7 +11,6 @@ public class TraitRegistry {
 
     public static ModTest test;
 
-
     public static final List<ModifierTrait> REGISTERED_TRAITS = new ArrayList<>();
 
     public static void init() {

@@ -2,14 +2,12 @@ package com.smd.tcongreedyaddon.proxy;
 
 import com.smd.tcongreedyaddon.init.BookTransformerAppendModifiers;
 import net.minecraft.item.Item;
-import net.minecraft.util.ResourceLocation;
 import slimeknights.mantle.client.book.repository.BookRepository;
 import slimeknights.mantle.client.book.repository.FileRepository;
 import slimeknights.tconstruct.common.ModelRegisterUtil;
 import slimeknights.tconstruct.library.TinkerRegistryClient;
 import slimeknights.tconstruct.library.book.TinkerBook;
 import slimeknights.tconstruct.library.client.ToolBuildGuiInfo;
-import slimeknights.tconstruct.library.modifiers.IModifier;
 import slimeknights.tconstruct.library.tools.IToolPart;
 import slimeknights.tconstruct.library.tools.ToolCore;
 import com.smd.tcongreedyaddon.plugin.oldweapons.OldWeapons;
@@ -61,10 +59,6 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void registerBookData() {
         TinkerBook.INSTANCE.addTransformer(new BookTransformerAppendModifiers());
-    }
-
-    public void registerModifierModel(IModifier mod, ResourceLocation rl) {
-        ModelRegisterUtil.registerModifierModel(mod, rl);
     }
 
     public <T extends Item & IToolPart> void registerToolPartModel(T part) {

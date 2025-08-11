@@ -1,31 +1,20 @@
 package com.smd.tcongreedyaddon;
 
 import com.smd.tcongreedyaddon.init.TraitRegistry;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.storage.loot.LootEntry;
-import net.minecraft.world.storage.loot.LootEntryTable;
-import net.minecraft.world.storage.loot.LootPool;
-import net.minecraft.world.storage.loot.RandomValueRange;
-import net.minecraft.world.storage.loot.conditions.LootCondition;
 import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import com.smd.tcongreedyaddon.config.ModConfig;
 import com.smd.tcongreedyaddon.plugin.IModule;
-import com.smd.tcongreedyaddon.plugin.oldweapons.OldWeapons;
 import com.smd.tcongreedyaddon.proxy.CommonProxy;
 
 import java.io.File;
 import java.util.ArrayList;
-
-import static com.smd.tcongreedyaddon.plugin.oldweapons.OldWeapons.greatbladeCoreCraftable;
 
 
 @Mod.EventBusSubscriber
@@ -44,15 +33,6 @@ public class TConGreedyAddon {
     public static CommonProxy proxy;
         
     public static ArrayList<IModule> Modules = new ArrayList<>();
-
-    @SubscribeEvent
-    public static void modifyLootTables(LootTableLoadEvent e) {
-        if (e.getName().toString().equals("minecraft:chests/end_city_treasure") && OldWeapons.greatbladeCoreFromEndShip.getBoolean() && greatbladeCoreCraftable.getBoolean()) {
-            LootEntry entry = new LootEntryTable(new ResourceLocation("tcongreedyaddon:inject/end_city_treasure"), 1, 0, new LootCondition[0], Tags.MOD_ID + ":fullGuardPatternVillageBlacksmith");
-            LootPool pool = new LootPool(new LootEntry[]{entry}, new LootCondition[0], new RandomValueRange(1F, 1F), new RandomValueRange(0F, 0F), Tags.MOD_ID + ":fullGuardPatternVillageBlacksmith");
-            e.getTable().addPool(pool);
-        }
-    }
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e) {
@@ -78,10 +58,11 @@ public class TConGreedyAddon {
             }
         }
     }
+
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        proxy.initToolGuis();
         proxy.registerBookData();
+        proxy.initToolGuis();
         for (IModule module : TConGreedyAddon.Modules) {
             if (module.isEnabled()) {
                 module.postInit(event);
