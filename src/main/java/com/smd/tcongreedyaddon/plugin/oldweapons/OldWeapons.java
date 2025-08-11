@@ -16,8 +16,11 @@ import com.smd.tcongreedyaddon.plugin.IModule;
 import com.smd.tcongreedyaddon.TConGreedyAddon;
 import com.smd.tcongreedyaddon.init.TotalTinkersRegister;
 
-public class OldWeapons extends IModule {
-    final static String CategoryName = "Old Tools";
+public class OldWeapons implements IModule {
+
+    @Override
+    public String getModuleName() { return "OldWeapons"; }
+
 
     public static WeaponBattleAxe battleaxe;
     public static WeaponDagger dagger;
@@ -30,19 +33,8 @@ public class OldWeapons extends IModule {
         return Loader.isModLoaded("tconstruct");
     }
 
-    public OldWeapons(boolean isEnabled) {
-        super(isEnabled);
-    }
-
-    @Override
-    public void buildConfig(Configuration cfg) {
-        cfg.addCustomCategoryComment(CategoryName, "Configuration for the old 1.7 weapons, reborn anew");
-
-    }
-
     @Override
     public void initItems(RegistryEvent.Register<Item> event) {
-        //新部件注册
 
             greatbladeCore = new ToolPart(Material.VALUE_Ingot * 24);
             greatbladeCore.setTranslationKey("greatbladeCore").setRegistryName("greatbladeCore");
@@ -50,22 +42,13 @@ public class OldWeapons extends IModule {
             TinkerRegistry.registerToolPart(greatbladeCore);
             TConGreedyAddon.proxy.registerToolPartModel(greatbladeCore);
 
-
-        //锻造台配方注册
-
             TinkerRegistry.registerStencilTableCrafting(Pattern.setTagForPart(new ItemStack(TinkerTools.pattern), greatbladeCore));
-
-
-        //新工具注册
 
             OldWeapons.battleaxe = new WeaponBattleAxe();
             TotalTinkersRegister.initForgeTool(OldWeapons.battleaxe, event);
 
-
             OldWeapons.allinonetool = new AllInOneTool();
             TotalTinkersRegister.initForgeTool(OldWeapons.allinonetool, event);
-
-
 
             OldWeapons.dagger = new WeaponDagger();
             event.getRegistry().register(OldWeapons.dagger);
@@ -73,13 +56,22 @@ public class OldWeapons extends IModule {
             TinkerRegistry.registerToolStationCrafting(OldWeapons.dagger);
             TConGreedyAddon.proxy.registerToolModel(OldWeapons.dagger);
 
-
             TinkerRangedWeapons.crossBow = new WeaponCrossbowOveride();
             TotalTinkersRegister.initForgeTool(TinkerRangedWeapons.crossBow, event);
 
-
             greatblade = new WeaponGreatblade();
             TotalTinkersRegister.initForgeTool(greatblade, event);
+    }
 
+    @Override
+    public void init() {
+    }
+
+    @Override
+    public void preInit() {
+    }
+
+    @Override
+    public void postInit() {
     }
 }

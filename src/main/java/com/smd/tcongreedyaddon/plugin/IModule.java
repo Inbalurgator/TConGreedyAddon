@@ -7,31 +7,15 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-public abstract class IModule {
-    protected boolean isEnabled;
 
-    public IModule(boolean isEnabled) {
-        this.isEnabled = isEnabled;
+public interface IModule {
+    String getModuleName();
+    boolean isModAvailable();
+    void preInit();
+    void init();
+    void postInit();
+    void initItems(RegistryEvent.Register<Item> event);
+    default boolean isEnabledByDefault() {
+        return true;
     }
-
-    public abstract boolean isModAvailable(
-
-    );
-
-    public abstract void buildConfig(Configuration cfg);
-
-    public void preInit(FMLPreInitializationEvent event) {
-    }
-
-    public void init(FMLInitializationEvent event) {
-    }
-
-    public boolean isEnabled() {
-        return isEnabled;
-    }
-
-    public void initItems(RegistryEvent.Register<Item> event) {
-    }
-
-    public void postInit(FMLPostInitializationEvent event) {}
-    }
+}
