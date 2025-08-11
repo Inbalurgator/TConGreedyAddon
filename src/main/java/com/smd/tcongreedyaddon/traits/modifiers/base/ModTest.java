@@ -1,4 +1,4 @@
-package com.smd.tcongreedyaddon.traits.modifiers;
+package com.smd.tcongreedyaddon.traits.modifiers.base;
 
 import slimeknights.tconstruct.library.modifiers.ModifierTrait;
 

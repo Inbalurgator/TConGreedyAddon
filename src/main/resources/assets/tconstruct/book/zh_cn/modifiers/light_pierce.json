@@ -1,12 +1,12 @@
 {
-  "modifier": "test",
+  "modifier": "light_pierce",
   "text": [
     {
-      "text": "测试用强化"
+      "text": "阴影克星"
     }
   ],
   "effects": [
-    "请输入文本"
+    "对阴影生物造成大量伤害。"
   ],
   "demoTool": [
     "tconstruct:pickaxe",

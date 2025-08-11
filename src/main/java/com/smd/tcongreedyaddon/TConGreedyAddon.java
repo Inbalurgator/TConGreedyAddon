@@ -1,6 +1,7 @@
 package com.smd.tcongreedyaddon;
 
 import com.smd.tcongreedyaddon.init.TraitRegistry;
+import com.smd.tcongreedyaddon.plugin.AbyssalCraft.AbyssalCraft;
 import com.smd.tcongreedyaddon.plugin.ModuleManager;
 import com.smd.tcongreedyaddon.plugin.oldweapons.OldWeapons;
 import net.minecraftforge.common.config.Configuration;
@@ -27,12 +28,12 @@ public class TConGreedyAddon {
     public void preInit(FMLPreInitializationEvent event) {
         config = new Configuration(event.getSuggestedConfigurationFile());
         ModuleManager.setupConfig(config);
-        ModuleManager.registerModule(new OldWeapons());
-    }
 
-    @Mod.EventHandler
-    public void preInit(FMLInitializationEvent event) {
+        ModuleManager.registerModule(new OldWeapons());
+        ModuleManager.registerModule(new AbyssalCraft());
+
         ModuleManager.preInitActiveModules();
+
         proxy.registerSubscriptions();
     }
 

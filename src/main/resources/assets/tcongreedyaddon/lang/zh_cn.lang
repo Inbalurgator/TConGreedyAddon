@@ -17,3 +17,17 @@ tooltip.greatbladecore=可以在末地船中找到
 stat.mattock.picklevel.name=镐等级
 
 modifier.test.name=测试用强化
+
+material.abyssalnite.name=渊素
+material.refined_coralium.name=精炼珊瑚
+material.dreadium.name=惧质
+
+modifier.dreadplague.name=恐惧疫染
+modifier.dreadplague.desc=§o向查伽洛斯臣服！§r\n在暴击时附加恐惧瘟疫效果。
+modifier.coraliumplague.name=珊瑚疫染
+modifier.coraliumplague.desc=§o感染一切！§r\n在暴击时附加珊瑚瘟疫效果。
+modifier.dreadpurity.name=净化
+modifier.dreadpurity.desc=§o消灭腐朽！§r\n对恐惧生物造成25%的额外伤害。
+modifier.light_pierce.name=光之穿刺
+modifier.light_pierce.desc=§o阴影克星§r\n对阴影生物造成大量伤害。
+modifier.light_pierce.extra=对阴影生物：+%s

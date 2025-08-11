@@ -2,7 +2,7 @@ package com.smd.tcongreedyaddon.plugin.oldweapons;
 
 import com.smd.tcongreedyaddon.init.TraitRegistry;
 import com.smd.tcongreedyaddon.tools.oldweapons.*;
-import com.smd.tcongreedyaddon.traits.modifiers.ModTest;
+import com.smd.tcongreedyaddon.traits.modifiers.base.ModTest;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.RegistryEvent;
@@ -21,6 +21,7 @@ public class OldWeapons implements IModule {
 
     @Override
     public String getModuleName() { return "OldWeapons"; }
+
 
     public static ToolPart greatbladeCore;
 
