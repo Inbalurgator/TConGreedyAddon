@@ -1,0 +1,14 @@
+{
+  "modifier": "test",
+  "text": [
+    {
+      "text": "测试用强化"
+    }
+  ],
+  "effects": [
+    "请输入文本"
+  ],
+  "demoTool": [
+    "tconstruct:pickaxe"
+  ]
+}

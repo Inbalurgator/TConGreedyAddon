@@ -1,5 +1,6 @@
 package com.smd.tcongreedyaddon;
 
+import com.smd.tcongreedyaddon.init.TraitRegistry;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.LootEntry;
 import net.minecraft.world.storage.loot.LootEntryTable;
@@ -55,6 +56,7 @@ public class TConGreedyAddon {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e) {
+        TraitRegistry.init();
         directory = e.getModConfigurationDirectory();
         config = new Configuration(new File(directory.getPath(), "tcongreedyaddon.cfg"));
         ModConfig.readConfig(Modules);
@@ -79,6 +81,7 @@ public class TConGreedyAddon {
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
         proxy.initToolGuis();
+        proxy.registerBookData();
         for (IModule module : TConGreedyAddon.Modules) {
             if (module.isEnabled()) {
                 module.postInit(event);

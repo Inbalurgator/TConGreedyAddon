@@ -1,8 +1,10 @@
 package com.smd.tcongreedyaddon.proxy;
 
+import com.smd.tcongreedyaddon.init.BookTransformerAppendModifiers;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
+import slimeknights.tconstruct.library.book.TinkerBook;
 import slimeknights.tconstruct.library.modifiers.IModifier;
 import slimeknights.tconstruct.library.tools.IToolPart;
 import slimeknights.tconstruct.library.tools.ToolCore;
@@ -25,6 +27,10 @@ public class CommonProxy {
     }
 
     public void registerSubscriptions() {
+    }
+
+    public void registerBookData() {
+        TinkerBook.INSTANCE.addTransformer(new BookTransformerAppendModifiers());
     }
 
     public void registerModifierModel(IModifier mod, ResourceLocation rl) {
