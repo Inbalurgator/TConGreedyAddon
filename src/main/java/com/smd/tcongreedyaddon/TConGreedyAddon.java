@@ -25,7 +25,6 @@ public class TConGreedyAddon {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-
         config = new Configuration(event.getSuggestedConfigurationFile());
         ModuleManager.setupConfig(config);
         ModuleManager.registerModule(new OldWeapons());
@@ -34,7 +33,6 @@ public class TConGreedyAddon {
     @Mod.EventHandler
     public void preInit(FMLInitializationEvent event) {
         ModuleManager.preInitActiveModules();
-        TraitRegistry.init();
         proxy.registerSubscriptions();
     }
 

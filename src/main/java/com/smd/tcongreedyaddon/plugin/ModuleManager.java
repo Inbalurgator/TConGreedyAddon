@@ -74,7 +74,6 @@ public class ModuleManager {
                 activeModules.add(module.getModuleName());
             }
         }
-
         if (config.hasChanged()) config.save();
     }
 

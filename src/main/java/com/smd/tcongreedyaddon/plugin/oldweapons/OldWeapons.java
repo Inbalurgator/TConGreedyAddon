@@ -1,9 +1,10 @@
 package com.smd.tcongreedyaddon.plugin.oldweapons;
 
+import com.smd.tcongreedyaddon.init.TraitRegistry;
 import com.smd.tcongreedyaddon.tools.oldweapons.*;
+import com.smd.tcongreedyaddon.traits.modifiers.ModTest;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;
 import slimeknights.tconstruct.library.TinkerRegistry;
@@ -21,12 +22,14 @@ public class OldWeapons implements IModule {
     @Override
     public String getModuleName() { return "OldWeapons"; }
 
+    public static ToolPart greatbladeCore;
 
     public static WeaponBattleAxe battleaxe;
     public static WeaponDagger dagger;
-    public static ToolPart greatbladeCore;
     public static WeaponGreatblade greatblade;
     public static AllInOneTool allinonetool;
+
+    public static ModTest test;
 
     @Override
     public boolean isModAvailable() {
@@ -65,6 +68,9 @@ public class OldWeapons implements IModule {
 
     @Override
     public void init() {
+        test = new ModTest();
+        TraitRegistry.REGISTERED_TRAITS.add(test);
+        test.addItem("stone", 1, 1);
     }
 
     @Override
