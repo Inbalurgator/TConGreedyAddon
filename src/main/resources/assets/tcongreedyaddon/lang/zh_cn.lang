@@ -2,12 +2,16 @@ item.greatblade.name=巨剑
 item.battleaxe.name=战斧
 item.dagger.name=匕首
 item.tconstruct:crossbow.name=十字弩
+item.allinonetool.name=全能工具
 
-item.greatbladeCore.name=巨剑核心
+item.greatbladeCore.name=组装核心
 
 item.greatblade.desc=这一武器的性能平衡且出色。沉重的巨剑牺牲了高攻击力,换取了更多的槽位，攻击速度慢，需要两只手挥动！
 item.battleaxe.desc=战斧是种重型攻击类武器。手持这把武器，化身为狂战士的你可以造成比平常大得多的伤害，但受到的伤害也会变为2倍。\n它还可以用于砍伐一些小型树木。
 item.tconstruct:crossbow.desc=十字弩是一个装填速度缓慢但威力强大的武器。它必须事先装填好弹药，但装填完毕后就可以随时发射。\n使用匠魂的弩箭。
 item.dagger.desc=匕首剑刃较小。
+item.allinonetool.desc=这是一种更加全面的工具，同时拥有镐斧铲锄的功能，但是代价是造价更高和无法用于战斗
 
 tooltip.greatbladecore=可以在末地船中找到
+
+stat.mattock.picklevel.name=镐等级

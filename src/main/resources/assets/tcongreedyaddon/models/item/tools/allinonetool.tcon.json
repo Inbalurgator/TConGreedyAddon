@@ -1,0 +1,10 @@
+{
+  "textures": {
+    "layer0": "tcongreedyaddon:item/allinonetool/handle",
+    "layer1": "tcongreedyaddon:item/allinonetool/backhead",
+    "layer2": "tcongreedyaddon:item/allinonetool/fronthead",
+    "layer3": "tcongreedyaddon:item/allinonetool/binding",
+    "layer4": "tcongreedyaddon:item/allinonetool/great_blade_core",
+    "broken1": "tcongreedyaddon:item/allinonetool/handle"
+  }
+}

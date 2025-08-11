@@ -37,6 +37,15 @@ public class ClientProxy extends CommonProxy {
             daggerInfo.addSlotPosition(33 - 2 - 1, 42 + 2); // guard
             TinkerRegistryClient.addToolBuilding(daggerInfo);
         }
+        if (OldWeapons.allinonetool != null) {
+            ToolBuildGuiInfo allinonetoolInfo = new ToolBuildGuiInfo(OldWeapons.allinonetool);
+            allinonetoolInfo.addSlotPosition(33 - 10 - 14, 42 + 10 + 12); // handle
+            allinonetoolInfo.addSlotPosition(33 - 8 + 6, 42 - 10 + 4 - 4); // head
+            allinonetoolInfo.addSlotPosition(33 + 14 + 6, 42 - 10 - 2 - 4); // head 2
+            allinonetoolInfo.addSlotPosition(33 + 10 - 10, 42 + 10 + 6); //core
+            allinonetoolInfo.addSlotPosition( 33 - 10 - 12, 42); //guard
+            TinkerRegistryClient.addToolBuilding(allinonetoolInfo);
+        }
     }
 
     public void registerToolModel(ToolCore tc) {

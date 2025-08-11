@@ -1,5 +1,6 @@
 package com.smd.tcongreedyaddon.plugin.oldweapons;
 
+import com.smd.tcongreedyaddon.tools.oldweapons.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
@@ -14,10 +15,6 @@ import slimeknights.tconstruct.tools.ranged.TinkerRangedWeapons;
 import com.smd.tcongreedyaddon.plugin.IModule;
 import com.smd.tcongreedyaddon.TConGreedyAddon;
 import com.smd.tcongreedyaddon.init.TotalTinkersRegister;
-import com.smd.tcongreedyaddon.tools.oldweapons.WeaponBattleAxe;
-import com.smd.tcongreedyaddon.tools.oldweapons.WeaponCrossbowOveride;
-import com.smd.tcongreedyaddon.tools.oldweapons.WeaponDagger;
-import com.smd.tcongreedyaddon.tools.oldweapons.WeaponGreatblade;
 
 public class OldWeapons extends IModule {
     final static String CategoryName = "Old Tools";
@@ -36,6 +33,7 @@ public class OldWeapons extends IModule {
     public static WeaponDagger dagger;
     public static ToolPart greatbladeCore;
     public static WeaponGreatblade greatblade;
+    public static AllInOneTool allinonetool;
 
     public OldWeapons(boolean isEnabled) {
         super(isEnabled);
@@ -61,10 +59,24 @@ public class OldWeapons extends IModule {
 
     @Override
     public void initItems(RegistryEvent.Register<Item> event) {
+
+        greatbladeCore = new ToolPart(Material.VALUE_Ingot * 24);
+        greatbladeCore.setTranslationKey("greatbladeCore").setRegistryName("greatbladeCore");
+        event.getRegistry().register(greatbladeCore);
+        TinkerRegistry.registerToolPart(greatbladeCore);
+        TConGreedyAddon.proxy.registerToolPartModel(greatbladeCore);
+        if (!OldWeapons.greatbladeCoreFromEndShip.getBoolean() && greatbladeCoreCraftable.getBoolean()) {
+            TinkerRegistry.registerStencilTableCrafting(Pattern.setTagForPart(new ItemStack(TinkerTools.pattern), greatbladeCore));
+        }
+
         if (OldWeapons.battleaxeEnabled.getBoolean()) {
             OldWeapons.battleaxe = new WeaponBattleAxe();
             TotalTinkersRegister.initForgeTool(OldWeapons.battleaxe, event);
         }
+
+        OldWeapons.allinonetool = new AllInOneTool();
+        TotalTinkersRegister.initForgeTool(OldWeapons.allinonetool, event);
+
         if (OldWeapons.daggerEnabled.getBoolean()) {
             OldWeapons.dagger = new WeaponDagger();
             event.getRegistry().register(OldWeapons.dagger);
@@ -77,14 +89,6 @@ public class OldWeapons extends IModule {
             TotalTinkersRegister.initForgeTool(TinkerRangedWeapons.crossBow, event);
         }
         if (OldWeapons.greatbladeEnabled.getBoolean()) {
-            greatbladeCore = new ToolPart(Material.VALUE_Ingot * 12);
-            greatbladeCore.setTranslationKey("greatbladeCore").setRegistryName("greatbladeCore");
-            event.getRegistry().register(greatbladeCore);
-            TinkerRegistry.registerToolPart(greatbladeCore);
-            TConGreedyAddon.proxy.registerToolPartModel(greatbladeCore);
-            if (!OldWeapons.greatbladeCoreFromEndShip.getBoolean() && greatbladeCoreCraftable.getBoolean()) {
-                TinkerRegistry.registerStencilTableCrafting(Pattern.setTagForPart(new ItemStack(TinkerTools.pattern), greatbladeCore));
-            }
             greatblade = new WeaponGreatblade();
             TotalTinkersRegister.initForgeTool(greatblade, event);
         }
