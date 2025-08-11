@@ -33,7 +33,7 @@ public class AbyssalCraft implements IModule {
 
     @Override
     public boolean isModAvailable() {
-        return Loader.isModLoaded("abyssalcraft");
+        return Loader.isModLoaded("禁用");
     }
 
     @Override

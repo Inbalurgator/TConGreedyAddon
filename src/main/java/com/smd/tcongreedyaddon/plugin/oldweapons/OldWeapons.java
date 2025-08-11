@@ -45,7 +45,6 @@ public class OldWeapons implements IModule {
             event.getRegistry().register(greatbladeCore);
             TinkerRegistry.registerToolPart(greatbladeCore);
             TConGreedyAddon.proxy.registerToolPartModel(greatbladeCore);
-
             TinkerRegistry.registerStencilTableCrafting(Pattern.setTagForPart(new ItemStack(TinkerTools.pattern), greatbladeCore));
 
             OldWeapons.battleaxe = new WeaponBattleAxe();
