@@ -35,7 +35,3 @@ jobs:
 
       - name: Build
         uses: gradle/gradle-build-action@v2
-
-          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
-        with:
-          arguments: modrinth
